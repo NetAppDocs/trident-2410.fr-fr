@@ -71,7 +71,7 @@ Pour utiliser Trident, vous avez besoin d'un ou plusieurs des systèmes back-end
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * Google Cloud NetApp volumes
-* FAS/AFF/Select 9.5 ou version ultérieure
+* Versions de clusters FAS, AFF ou ASA r2 sur site prises en charge limitée par NetApp. Voir link:https://mysupport.netapp.com/site/info/version-support["Prise en charge des versions logicielles"].
 * Baie SAN 100 % Flash (ASA) de NetApp
 * Logiciel NetApp HCI/Element 11 ou version ultérieure
 
