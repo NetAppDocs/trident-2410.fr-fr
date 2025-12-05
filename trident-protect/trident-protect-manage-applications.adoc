@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-manage-applications.html 
 keywords: appvault, data protection, custom resource, namespace, application, cluster 
-summary: 'Vous pouvez informer Trident Protect d"une application que vous souhaitez gérer en créant une application CR et une application CR AppVault associée.' 
+summary: 'Vous pouvez informer Trident Protect d"une application que vous souhaitez gérer en créant une demande de changement d"application et une demande de changement AppVault associée.' 
 ---
 = Définissez une application de gestion avec Trident Protect
 :hardbreaks:
@@ -14,19 +14,19 @@ summary: 'Vous pouvez informer Trident Protect d"une application que vous souhai
 
 
 [role="lead"]
-Vous pouvez définir une application que vous souhaitez gérer avec Trident Protect en créant une application CR et une application CR AppVault associée.
+Vous pouvez définir une application que vous souhaitez gérer avec Trident Protect en créant une demande de changement d'application et une demande de changement AppVault associée.
 
 
 
 == Créez une CR AppVault
 
-Vous devez créer une CR AppVault qui sera utilisée lors des opérations de protection des données sur l'application et la CR AppVault doit résider sur le cluster sur lequel Trident Protect est installé. La CR AppVault est spécifique à votre environnement ; pour obtenir des exemples de CRS AppVault, reportez-vous à la section link:trident-protect-appvault-custom-resources.html["Ressources personnalisées AppVault."]
+Vous devez créer une ressource personnalisée AppVault qui sera utilisée lors des opérations de protection des données sur l'application, et cette ressource personnalisée AppVault doit résider sur le cluster où Trident Protect est installé. La demande de changement (CR) AppVault est spécifique à votre environnement ; pour des exemples de CR AppVault, reportez-vous àlink:trident-protect-appvault-custom-resources.html["Ressources personnalisées AppVault."]
 
 
 
 == Définir une application
 
-Vous devez définir chaque application à gérer avec Trident Protect. Vous pouvez définir une application à gérer en créant manuellement une application CR ou en utilisant l'interface de ligne de commande Trident Protect.
+Vous devez définir chaque application que vous souhaitez gérer avec Trident Protect. Vous pouvez définir une application de gestion soit en créant manuellement une demande de changement d'application, soit en utilisant l'interface de ligne de commande (CLI) de Trident Protect.
 
 [role="tabbed-block"]
 ====

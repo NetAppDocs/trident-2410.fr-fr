@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-installation.html 
 keywords: install, trident, protect, requirements, registry 
-summary: Si votre environnement répond aux exigences requises, vous pouvez suivre ces étapes pour installer Trident Protect. 
+summary: Si votre environnement répond aux exigences, vous pouvez suivre ces étapes pour installer Trident Protect. 
 ---
-= Installer et configurer Trident Protect
+= Installez et configurez Trident Protect.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Si votre environnement répond aux exigences requises, vous pouvez suiv
 
 
 [role="lead"]
-Si votre environnement satisfait aux exigences de Trident Protect, vous pouvez suivre ces étapes pour installer Trident Protect sur votre cluster. Vous pouvez obtenir Trident Protect de NetApp ou l'installer à partir de votre propre registre privé. L'installation à partir d'un registre privé est utile si votre cluster ne peut pas accéder à Internet.
+Si votre environnement répond aux exigences de Trident Protect, vous pouvez suivre ces étapes pour installer Trident Protect sur votre cluster. Vous pouvez obtenir Trident Protect auprès de NetApp ou l'installer à partir de votre propre registre privé. L'installation à partir d'un registre privé est utile si votre cluster ne peut pas accéder à Internet.
 
 
-NOTE: Par défaut, Trident Protect collecte des informations sur le support que vous pouvez ouvrir dans tous les dossiers de support NetApp, y compris les journaux, les metrics et les informations de topologie des clusters et des applications gérées. Trident Protect envoie ces offres de support à NetApp selon un calendrier quotidien. Vous pouvez éventuellement désactiver cette collection de packs de prise en charge lorsque vous installez Trident Protect. Vous pouvez le faire manuellement link:trident-protect-generate-support-bundle.html["générer un bundle de support"]à tout moment.
+NOTE: Par défaut, Trident Protect collecte des informations de support utiles pour toute demande d'assistance NetApp que vous pourriez ouvrir, notamment les journaux, les métriques et les informations de topologie concernant les clusters et les applications gérées. Trident Protect envoie quotidiennement ces modules de support à NetApp . Vous pouvez désactiver, si vous le souhaitez, ce pack de support lors de l'installation de Trident Protect. Vous pouvez manuellementlink:trident-protect-generate-support-bundle.html["générer un bundle de support"] à tout moment.
 
 
 
-== Installez Trident Protect
+== Installer Trident Protect
 
 [role="tabbed-block"]
 ====
-.Installez Trident Protect from NetApp
+.Installez Trident Protect de NetApp
 --
 .Étapes
 . Ajout du référentiel Trident Helm :
@@ -40,15 +40,15 @@ helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-he
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. Utilisez Helm pour installer Trident Protect à l'aide de l'une des commandes suivantes. Remplacer `<name_of_cluster>` par un nom de cluster, qui sera attribué au cluster et utilisé pour identifier les sauvegardes et snapshots du cluster :
+. Utilisez Helm pour installer Trident Protect en utilisant l'une des commandes suivantes. Remplacer `<name_of_cluster>` avec un nom de cluster, qui sera attribué au cluster et utilisé pour identifier les sauvegardes et les instantanés du cluster :
 +
-** Installez Trident Protect normalement :
+** Installez Trident Protect normalement :
 +
 [source, console]
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-** Installez Trident Protect et désactivez les téléchargements quotidiens de packs de prise en charge Trident Protect AutoSupport :
+** Installez Trident Protect et désactivez les téléchargements quotidiens planifiés du module de support AutoSupport Trident Protect :
 +
 [source, console]
 ----
@@ -61,7 +61,7 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 --
 .Installez Trident Protect à partir d'un registre privé
 --
-Vous pouvez installer Trident Protect à partir d'un registre d'images privé si votre cluster Kubernetes ne peut pas accéder à Internet. Dans ces exemples, remplacez les valeurs entre parenthèses par les informations de votre environnement :
+Vous pouvez installer Trident Protect à partir d'un registre d'images privé si votre cluster Kubernetes ne peut pas accéder à Internet. Dans ces exemples, remplacez les valeurs entre crochets par les informations provenant de votre environnement :
 
 .Étapes
 . Extrayez les images suivantes sur votre ordinateur local, mettez à jour les balises, puis envoyez-les vers votre registre privé :
@@ -97,7 +97,7 @@ docker tag netapp/controller:24.10.1 <private-registry-url>/controller:24.10.1
 ----
 docker push <private-registry-url>/controller:24.10.1
 ----
-. Créer l'espace de noms du système Trident Protect :
+. Créez l'espace de noms système Trident Protect :
 +
 [source, console]
 ----
@@ -121,7 +121,7 @@ kubectl create secret docker-registry regcred --docker-username=<registry-userna
 ----
 helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
 ----
-. Créez un fichier nommé `protectValues.yaml`. Assurez-vous qu'il contient les paramètres Trident Protect suivants :
+. Créez un fichier nommé `protectValues.yaml` . Assurez-vous qu'il contienne les paramètres Trident Protect suivants :
 +
 [source, yaml]
 ----
@@ -143,21 +143,21 @@ webhooksCleanup:
   imagePullSecrets:
     - name: regcred
 ----
-. Installez les CRD Trident Protect :
+. Installez les CRD Trident Protect :
 +
 [source, console]
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. Utilisez Helm pour installer Trident Protect à l'aide de l'une des commandes suivantes. Remplacer `<name_of_cluster>` par un nom de cluster, qui sera attribué au cluster et utilisé pour identifier les sauvegardes et snapshots du cluster :
+. Utilisez Helm pour installer Trident Protect en utilisant l'une des commandes suivantes. Remplacer `<name_of_cluster>` avec un nom de cluster, qui sera attribué au cluster et utilisé pour identifier les sauvegardes et les instantanés du cluster :
 +
-** Installez Trident Protect normalement :
+** Installez Trident Protect normalement :
 +
 [source, console]
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect -f protectValues.yaml
 ----
-** Installez Trident Protect et désactivez les téléchargements quotidiens de packs de prise en charge Trident Protect AutoSupport :
+** Installez Trident Protect et désactivez les téléchargements quotidiens planifiés du module de support AutoSupport Trident Protect :
 +
 [source, console]
 ----
@@ -171,13 +171,13 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 ====
 
 
-== Spécifiez les limites des ressources du conteneur Trident Protect
+== Spécifiez les limites de ressources du conteneur Trident Protect
 
-Vous pouvez utiliser un fichier de configuration pour spécifier les limites de ressources pour les conteneurs Trident Protect après avoir installé Trident Protect. La définition de limites de ressources vous permet de contrôler la quantité de ressources du cluster consommées par les opérations Trident Protect.
+Vous pouvez utiliser un fichier de configuration pour spécifier les limites de ressources des conteneurs Trident Protect après l'installation de Trident Protect. La définition de limites de ressources vous permet de contrôler la quantité de ressources du cluster consommées par les opérations de Trident Protect.
 
 .Étapes
 . Créez un fichier nommé `resourceLimits.yaml`.
-. Remplissez le fichier avec les options de limite de ressources pour les conteneurs Trident Protect en fonction des besoins de votre environnement.
+. Renseignez le fichier avec les options de limite de ressources pour les conteneurs Trident Protect en fonction des besoins de votre environnement.
 +
 L'exemple de fichier de configuration suivant montre les paramètres disponibles et contient les valeurs par défaut pour chaque limite de ressource :
 

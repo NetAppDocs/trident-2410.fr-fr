@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-appvault-custom-resources.html 
 keywords: trident. appvault, custom, protect, kubernetes 
-summary: 'La ressource personnalisée de compartiment (CR) pour Trident Protect est appelée AppVault. AppVaults sont la représentation déclarative du workflow Kubernetes d"un compartiment de stockage.' 
+summary: 'La ressource personnalisée (CR) du compartiment pour Trident Protect est connue sous le nom d"AppVault. Les AppVaults sont la représentation déclarative d"un bucket de stockage dans Kubernetes.' 
 ---
-= Utilisez les objets Trident Protect AppVault pour gérer les compartiments
+= Utilisez les objets Trident Protect AppVault pour gérer les compartiments.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'La ressource personnalisée de compartiment (CR) pour Trident Protect 
 
 
 [role="lead"]
-La ressource personnalisée de compartiment (CR) pour Trident Protect est appelée AppVault. Les objets AppVault sont la représentation déclarative du workflow Kubernetes d'un compartiment de stockage. Une CR AppVault contient les configurations nécessaires à l'utilisation d'un compartiment dans les opérations de protection, telles que les sauvegardes, les snapshots, les opérations de restauration et la réplication SnapMirror. Seuls les administrateurs peuvent créer des AppVault.
+La ressource personnalisée (CR) du compartiment pour Trident Protect est connue sous le nom d'AppVault. Les objets AppVault sont la représentation déclarative du flux de travail Kubernetes d’un bucket de stockage. Un AppVault CR contient les configurations nécessaires pour qu'un bucket soit utilisé dans les opérations de protection, telles que les sauvegardes, les snapshots, les opérations de restauration et la réplication SnapMirror . Seuls les administrateurs peuvent créer des AppVaults.
 
 
 
@@ -285,7 +285,7 @@ tridentctl-protect create vault StorageGridS3 s3vault --bucket <bucket-name> --s
 
 == Utilisez le navigateur AppVault pour afficher les informations AppVault
 
-Vous pouvez utiliser le plug-in Trident Protect CLI pour afficher des informations sur les objets AppVault qui ont été créés sur le cluster.
+Vous pouvez utiliser le plugin CLI Trident Protect pour afficher des informations sur les objets AppVault créés sur le cluster.
 
 .Étapes
 . Afficher le contenu d'un objet AppVault :
@@ -316,7 +316,7 @@ tridentctl-protect get appvaultcontent gcp-vault --show-resources all
 ----
 . Si vous le souhaitez, utilisez l'indicateur pour afficher le chemin d'accès à l'application pour chaque ressource `--show-paths` .
 +
-Le nom de cluster figurant dans la première colonne du tableau n'est disponible que si un nom de cluster a été spécifié dans l'installation de Trident Protect Helm. Par exemple : `--set clusterName=production1`.
+Le nom du cluster dans la première colonne du tableau n'est disponible que si un nom de cluster a été spécifié dans l'installation Helm de Trident Protect. Par exemple: `--set clusterName=production1` .
 
 
 
@@ -345,7 +345,7 @@ kubectl delete appvault <appvault_name> -n trident-protect
 
 
 --
-.Supprimez un AppVault à l'aide de l'interface de ligne de commande Trident Protect
+.Supprimer un AppVault à l'aide de l'interface de ligne de commande Trident Protect
 --
 . Supprimez l'objet AppVault, en le remplaçant `appvault_name` par le nom de l'objet AppVault à supprimer :
 +

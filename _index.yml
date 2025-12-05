@@ -46,9 +46,9 @@ indexpage:
     links:
     - title: Protection avancée des données avec Trident Protect
       url: "/trident-protect/learn-about-trident-protect.html"
-    - title: Déployez Trident Protect
+    - title: Déploiement de Trident Protect
       url: "/trident-protect/trident-protect-installation.html"
-    - title: Mettez à niveau Trident Protect
+    - title: Amélioration de Trident Protect
       url: "/trident-protect/trident-protect-upgrade.html"
   - title: Démonstrations et didacticiels
     links:
