@@ -109,7 +109,7 @@ Vous pouvez configurer Trident Protect 24.10 pour gérer le gel et le dégel du 
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=true -n trident-protect
 ----
 .Trident Protect 24.10.1 et versions ultérieures
-À partir de Trident Protect 24.10.1, Trident Protect gèle et débloque automatiquement les systèmes de fichiers KubeVirt pendant les opérations de protection des données. Vous pouvez désactiver ce comportement automatique à l'aide de la commande suivante :
+À partir de Trident Protect 24.10.1, Trident Protect gèle et dégèle automatiquement les systèmes de fichiers KubeVirt lors des opérations de protection des données. Vous pouvez désactiver ce comportement automatique à l'aide de la commande suivante :
 
 [source, console]
 ----

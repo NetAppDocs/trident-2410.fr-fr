@@ -34,7 +34,7 @@ NOTE: Par défaut, Trident Protect collecte des informations de support utiles p
 ----
 helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
 ----
-. Installez les CRD Trident Protect :
+. Installez les CRD Trident Protect :
 +
 [source, console]
 ----
