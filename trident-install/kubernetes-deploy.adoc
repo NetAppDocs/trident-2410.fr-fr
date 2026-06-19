@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy.html 
+permalink: trident-install/kubernetes-deploy.html 
 keywords: deploy, Trident, methods, operator, tridentctl, helm, tanzu, vmware 
 summary: 'Vous pouvez installer Trident à l"aide de l"opérateur Trident (manuellement ou à l"aide de Helm) ou de `tridentctl`. Cette rubrique fournit des informations importantes pour sélectionner le processus d"installation qui vous convient.' 
 ---
@@ -40,7 +40,7 @@ L'utilisation d'une configuration sans chemins d'accès multiples ou l'utilisati
 
 Quel que soit votre chemin d'installation, vous devez avoir :
 
-* Privilèges complets vers un cluster Kubernetes pris en charge exécutant une version prise en charge de Kubernetes et conditions requises pour les fonctionnalités activées. Consultez le link:requirements.html["de formation"] pour plus d'informations.
+* Accès complet à un cluster Kubernetes compatible, exécutant une version compatible de Kubernetes et dont les fonctionnalités requises sont activées. Consultez la link:/trident-get-started/requirements.html["de formation"] pour plus de détails.
 * Accès à un système de stockage NetApp pris en charge.
 * Capacité de monter des volumes à partir de tous les nœuds de travail Kubernetes.
 * Un hôte Linux avec `kubectl` (ou `oc`, si vous utilisez OpenShift) est installé et configuré pour gérer le cluster Kubernetes que vous souhaitez utiliser.
@@ -49,7 +49,7 @@ Quel que soit votre chemin d'installation, vous devez avoir :
 
 
 
-TIP: Si vous ne vous êtes pas familiarisé avec le link:../trident-concepts/intro.html["concepts de base"^], c'est le moment idéal pour le faire.
+TIP: Si vous ne vous êtes pas encore familiarisé avec le link:../trident-get-started/intro.html["concepts de base"^], c'est le moment idéal pour le faire.
 
 
 
@@ -61,7 +61,7 @@ Sélectionnez la méthode d'installation qui vous convient. Vous devez égalemen
 
 === Utilisation de l'opérateur Trident
 
-Qu'il s'agisse d'un déploiement manuel ou à l'aide d'Helm, l'opérateur Trident est un excellent moyen de simplifier l'installation et de gérer dynamiquement les ressources Trident. Vous pouvez même link:../trident-get-started/kubernetes-customize-deploy.html["Personnalisez le déploiement de l'opérateur Trident"] utiliser les attributs dans la `TridentOrchestrator` ressource personnalisée (CR).
+Que ce soit par déploiement manuel ou via Helm, l’opérateur Trident est un excellent moyen de simplifier l’installation et de gérer dynamiquement les ressources Trident. Vous pouvez même link:../trident-install/kubernetes-customize-deploy.html["Personnalisez le déploiement de l'opérateur Trident"] en utilisant les attributs de la  `TridentOrchestrator` ressource personnalisée (CR).
 
 L'utilisateur de Trident présente les avantages suivants :
 

@@ -141,7 +141,7 @@ Vous pouvez supprimer un volume partagé entre plusieurs namespaces. Trident sup
 
 ==  `tridentctl get`Permet d'interroger les volumes subordonnés
 
-A l'aide de l'[`tridentctl`utilitaire, vous pouvez exécuter la `get` commande pour obtenir des volumes subordonnés. Pour plus d'informations, reportez-vous au lien :../Trident-Reference/tridentctl.html[`tridentctl` commandes et options].
+À l'aide de l'[`tridentctl`utilitaire, vous pouvez exécuter la commande  `get`pour obtenir les volumes subordonnés. Pour plus d'informations, consultez le lien : ../trident-managing-k8s/tridentctl.html[`tridentctl` commandes et options].
 
 [listing]
 ----
@@ -170,6 +170,5 @@ Alarmes :
 
 Pour en savoir plus sur l'accès aux volumes multi-espaces de noms :
 
-* Visitez link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["Partage de volumes entre les espaces de noms : dites bonjour à l'accès aux volumes situés à l'échelle d'un espace de noms"^].
 * Regardez la démo sur link:https://media.netapp.com/page/9071d19d-1438-5ed3-a7aa-ea4d73c28b7f/solutions-products["NetAppTV"^].
 
